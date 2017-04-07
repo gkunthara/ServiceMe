@@ -12,6 +12,7 @@
 		267098CE1E9700CC0063A42E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 267098CC1E9700CC0063A42E /* Main.storyboard */; };
 		267098D01E9700CC0063A42E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 267098CF1E9700CC0063A42E /* Assets.xcassets */; };
 		267098D31E9700CC0063A42E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 267098D11E9700CC0063A42E /* LaunchScreen.storyboard */; };
+		26F4076B1E97503B00D3A63E /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4076A1E97503B00D3A63E /* QuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		267098CF1E9700CC0063A42E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		267098D21E9700CC0063A42E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		267098D41E9700CC0063A42E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26F4076A1E97503B00D3A63E /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				267098C81E9700CC0063A42E /* AppDelegate.swift */,
 				267098CA1E9700CC0063A42E /* ViewController.swift */,
 				267098CC1E9700CC0063A42E /* Main.storyboard */,
+				26F4076A1E97503B00D3A63E /* QuestionViewController.swift */,
 				267098CF1E9700CC0063A42E /* Assets.xcassets */,
 				267098D11E9700CC0063A42E /* LaunchScreen.storyboard */,
 				267098D41E9700CC0063A42E /* Info.plist */,
@@ -138,6 +141,7 @@
 			files = (
 				267098CB1E9700CC0063A42E /* ViewController.swift in Sources */,
 				267098C91E9700CC0063A42E /* AppDelegate.swift in Sources */,
+				26F4076B1E97503B00D3A63E /* QuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +303,7 @@
 				267098D91E9700CC0063A42E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
