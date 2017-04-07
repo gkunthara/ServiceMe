@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         //does the segue from the homepage to the start of the Questionaire
         performSegue(withIdentifier: "homeToQuestionSegue", sender: nil)
         print("wow")
+        print("made this");
     }
 
     override func viewDidLoad() {
