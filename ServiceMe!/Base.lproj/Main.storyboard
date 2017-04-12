@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,21 +24,13 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ServiceMe!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wun-AD-fV7">
                                 <rect key="frame" x="79" y="255" width="216" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="Tzv-43-094"/>
-                                    <constraint firstAttribute="width" constant="216" id="tys-Zu-Qbh"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-BoldItalic" family="Avenir Next" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seB-b5-3La">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seB-b5-3La">
                                 <rect key="frame" x="134" y="354" width="107" height="72"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="107" id="Z6c-53-qWs"/>
-                                    <constraint firstAttribute="height" constant="72" id="pCw-Jj-RLq"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="20"/>
                                 <state key="normal" title="Volunteer!">
                                     <color key="titleColor" red="0.23577463630000001" green="0.57108193640000005" blue="0.4732326865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -56,12 +48,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.23577463626861572" green="0.57108193635940552" blue="0.4732326865196228" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="seB-b5-3La" firstAttribute="top" secondItem="wun-AD-fV7" secondAttribute="bottom" constant="44" id="5iW-I8-2LH"/>
-                            <constraint firstItem="seB-b5-3La" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9NX-9W-r29"/>
-                            <constraint firstItem="wun-AD-fV7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="63" id="CEu-AI-ORX"/>
-                            <constraint firstItem="wun-AD-fV7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="235" id="INI-5M-FzK"/>
-                            <constraint firstItem="seB-b5-3La" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="118" id="nhq-YH-kp8"/>
-                            <constraint firstItem="wun-AD-fV7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zOs-HX-C36"/>
+                            <constraint firstItem="seB-b5-3La" firstAttribute="width" secondItem="wun-AD-fV7" secondAttribute="width" id="7yu-Qn-mkO"/>
+                            <constraint firstItem="wun-AD-fV7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="235" id="KTq-mk-Fxz"/>
+                            <constraint firstItem="seB-b5-3La" firstAttribute="height" secondItem="wun-AD-fV7" secondAttribute="height" id="WlH-JT-3gB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="seB-b5-3La" secondAttribute="bottom" constant="241" id="XMe-Dp-yiZ"/>
+                            <constraint firstItem="wun-AD-fV7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="63" id="f8M-jI-c72"/>
+                            <constraint firstItem="seB-b5-3La" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="118" id="zxs-Tk-YjE"/>
                         </constraints>
                     </view>
                     <connections>
@@ -140,8 +132,9 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="startOverButton:" destination="ngB-Ir-K4W" eventType="touchUpInside" id="lSM-P6-TkB"/>
                                     <action selector="volunteerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tJZ-3O-XQk"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="awn-JE-zGd"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="startOverSegue" id="RVr-I6-rbQ"/>
                                 </connections>
                             </button>
                         </subviews>
