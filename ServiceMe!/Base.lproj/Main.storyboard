@@ -28,7 +28,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seB-b5-3La">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seB-b5-3La">
                                 <rect key="frame" x="134" y="354" width="107" height="72"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="20"/>
@@ -48,9 +48,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.23577463626861572" green="0.57108193635940552" blue="0.4732326865196228" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="seB-b5-3La" firstAttribute="width" secondItem="wun-AD-fV7" secondAttribute="width" id="7yu-Qn-mkO"/>
+                            <constraint firstItem="seB-b5-3La" firstAttribute="width" secondItem="wun-AD-fV7" secondAttribute="width" constant="-109" id="7yu-Qn-mkO"/>
                             <constraint firstItem="wun-AD-fV7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="235" id="KTq-mk-Fxz"/>
-                            <constraint firstItem="seB-b5-3La" firstAttribute="height" secondItem="wun-AD-fV7" secondAttribute="height" id="WlH-JT-3gB"/>
+                            <constraint firstItem="seB-b5-3La" firstAttribute="height" secondItem="wun-AD-fV7" secondAttribute="height" constant="17" id="WlH-JT-3gB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="seB-b5-3La" secondAttribute="bottom" constant="241" id="XMe-Dp-yiZ"/>
                             <constraint firstItem="wun-AD-fV7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="63" id="f8M-jI-c72"/>
                             <constraint firstItem="seB-b5-3La" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="118" id="zxs-Tk-YjE"/>
