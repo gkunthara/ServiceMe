@@ -10,6 +10,9 @@ import UIKit
 
 class QuestionViewController: UIViewController {
 
+    @IBOutlet weak var message_label: UITextView!
+    var count: Int = 0
+    var questions: Array = ["elderly","smokers","drinkers","killers","delinquents"]
     @IBAction func startOverButton(_ sender: Any)
     {
         //does the segue from the questionaire to the start page
@@ -26,16 +29,25 @@ class QuestionViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func yes_button(_ sender: Any) {
+        if count > 4 {
+            self.performSegue(withIdentifier: "table_transition", sender: self)
+        } else {
+            self.message_label.text = questions[count]
+            self.count  = count + 1
+        }
+    }
+    @IBAction func no_button(_ sender: Any) {
+        if count > 4 {
+            self.performSegue(withIdentifier: "table_transition", sender: self)
+        } else {
+            self.message_label.text = questions[count]
+            self.count  = count + 1
+        }
+    }
+   
+   
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
