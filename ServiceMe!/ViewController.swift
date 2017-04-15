@@ -13,10 +13,11 @@ class ViewController: UIViewController {
     @IBAction func volunteerButton(_ sender: Any) {
         
         //does the segue from the homepage to the start of the Questionaire
+        
         performSegue(withIdentifier: "homeToQuestionSegue", sender: nil)
  
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

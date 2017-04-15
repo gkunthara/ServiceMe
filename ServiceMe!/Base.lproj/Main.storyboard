@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,22 +18,31 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ServiceMe!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wun-AD-fV7">
-                                <rect key="frame" x="52" y="256.5" width="216" height="55"/>
+                                <rect key="frame" x="79.5" y="306" width="216" height="55"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-BoldItalic" family="Avenir Next" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seB-b5-3La">
-                                <rect key="frame" x="111" y="338" width="98" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="seB-b5-3La">
+                                <rect key="frame" x="134" y="387.5" width="107" height="42"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="20"/>
-                                <state key="normal" title="Volunteer!">
-                                    <color key="titleColor" red="0.23577463630000001" green="0.57108193640000005" blue="0.4732326865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="ZSa-ue-VRi"/>
+                                    <constraint firstAttribute="height" constant="42" id="edw-SL-aYb"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Volunteer!">
+                                            <attributes>
+                                                <color key="NSColor" red="0.23577463630000001" green="0.57108193640000005" blue="0.4732326865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="20" name="Avenir-HeavyOblique"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -55,7 +63,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="ngB-Ir-K4W" kind="show" identifier="homeToQuestionSegue" id="AzO-X8-Lqx"/>
+                        <segue destination="ngB-Ir-K4W" kind="show" identifier="homeToQuestionSegue" id="el1-IX-KmG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -71,117 +79,92 @@
                         <viewControllerLayoutGuide type="bottom" id="AgC-G4-S3I"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="opy-FJ-vKn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMB-xT-hkK">
-                                <rect key="frame" x="36" y="353" width="90" height="65"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ServiceMe!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASk-Mh-gcZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="OAO-hT-AwJ"/>
-                                    <constraint firstAttribute="height" constant="65" id="i8b-Fv-ibq"/>
+                                    <constraint firstAttribute="height" constant="62" id="ece-NG-uJ2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="30"/>
-                                <state key="normal" title="Yes">
-                                    <color key="titleColor" red="0.23577463630000001" green="0.57108193640000005" blue="0.4732326865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="volunteerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hJU-g3-LN7"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8a-c5-qs7">
-                                <rect key="frame" x="106" y="468" width="108" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="108" id="eKL-HO-51V"/>
-                                    <constraint firstAttribute="height" constant="30" id="eY1-Wk-Ogq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="22"/>
-                                <state key="normal" title="Start Over">
-                                    <color key="titleColor" red="0.23577463630000001" green="0.57108193640000005" blue="0.4732326865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="startOverButton:" destination="ngB-Ir-K4W" eventType="touchUpInside" id="lSM-P6-TkB"/>
-                                    <action selector="volunteerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tJZ-3O-XQk"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="startOverSegue" id="RVr-I6-rbQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVW-Y9-R10">
-                                <rect key="frame" x="194" y="353" width="90" height="65"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="52d-DY-eEK"/>
-                                    <constraint firstAttribute="width" constant="90" id="YV9-DL-vNE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="30"/>
-                                <state key="normal" title="No">
-                                    <color key="titleColor" red="0.23577463630000001" green="0.57108193640000005" blue="0.4732326865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="volunteerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="geH-c6-j4T"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ServiceMe!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSx-X7-kjO">
-                                <rect key="frame" x="-47" y="0.0" width="414" height="65"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="Mn5-5U-v8C"/>
-                                    <constraint firstAttribute="height" constant="65" id="oHg-1x-YAt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="50"/>
-                                <color key="textColor" red="0.23577463630000001" green="0.57108193640000005" blue="0.4732326865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="45"/>
+                                <color key="textColor" red="0.23577463626861572" green="0.57108193635940552" blue="0.4732326865196228" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Do you enjoy working with homeless people?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xeN-5Y-tsB">
-                                <rect key="frame" x="40" y="145" width="240" height="180"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="LAD-Wd-OtN"/>
-                                    <constraint firstAttribute="width" constant="240" id="gBh-35-WKn"/>
-                                </constraints>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="32"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7h4-HH-KLo">
+                                <rect key="frame" x="50" y="177" width="275" height="313"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eOB-dH-aED">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="250"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you enjoy working with homeless people?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUf-Fx-5ac">
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="250"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="PYZ-W9-aQj"/>
+                                                    <constraint firstAttribute="width" constant="275" id="R3z-Jt-Bg4"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="32"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="5yd-5U-zf3">
+                                        <rect key="frame" x="35" y="250" width="205" height="63"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jj3-Ie-bdc">
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="63"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="90" id="Rxx-3H-o5F"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                                <state key="normal" title="Yes">
+                                                    <color key="titleColor" red="0.23577463630000001" green="0.57108193640000005" blue="0.4732326865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0b-8H-t4C">
+                                                <rect key="frame" x="115" y="0.0" width="90" height="63"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="90" id="281-1n-RVt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                                <state key="normal" title="No">
+                                                    <color key="titleColor" red="0.23577463630000001" green="0.57108193640000005" blue="0.4732326865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.23577463630000001" green="0.57108193640000005" blue="0.4732326865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xeN-5Y-tsB" firstAttribute="centerX" secondItem="opy-FJ-vKn" secondAttribute="centerX" id="06p-2A-dMp"/>
-                            <constraint firstItem="SMB-xT-hkK" firstAttribute="leading" secondItem="opy-FJ-vKn" secondAttribute="leadingMargin" constant="20" id="2Ey-T8-OXy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NVW-Y9-R10" secondAttribute="trailing" constant="20" id="3gV-va-5cN"/>
-                            <constraint firstItem="AgC-G4-S3I" firstAttribute="top" secondItem="j8a-c5-qs7" secondAttribute="bottom" constant="70" id="A2o-DU-fNA"/>
-                            <constraint firstItem="AgC-G4-S3I" firstAttribute="top" secondItem="NVW-Y9-R10" secondAttribute="bottom" constant="150" id="E7g-wD-yXc"/>
-                            <constraint firstItem="j8a-c5-qs7" firstAttribute="centerX" secondItem="opy-FJ-vKn" secondAttribute="centerX" id="IAo-PX-5bV"/>
-                            <constraint firstItem="KSx-X7-kjO" firstAttribute="top" secondItem="yki-Nf-jZP" secondAttribute="bottom" constant="-20" id="LVT-kV-3sX"/>
-                            <constraint firstItem="xeN-5Y-tsB" firstAttribute="top" secondItem="yki-Nf-jZP" secondAttribute="bottom" constant="125" id="Zbc-5l-Ida"/>
-                            <constraint firstItem="AgC-G4-S3I" firstAttribute="top" secondItem="SMB-xT-hkK" secondAttribute="bottom" constant="150" id="grA-bL-m35"/>
-                            <constraint firstItem="KSx-X7-kjO" firstAttribute="centerX" secondItem="opy-FJ-vKn" secondAttribute="centerX" id="qZc-FI-R6D"/>
+                            <constraint firstItem="ASk-Mh-gcZ" firstAttribute="top" secondItem="opy-FJ-vKn" secondAttribute="top" id="572-sW-29r"/>
+                            <constraint firstItem="7h4-HH-KLo" firstAttribute="centerY" secondItem="opy-FJ-vKn" secondAttribute="centerY" id="Now-Y7-tiu"/>
+                            <constraint firstItem="ASk-Mh-gcZ" firstAttribute="centerX" secondItem="opy-FJ-vKn" secondAttribute="centerX" id="YmD-73-qac"/>
+                            <constraint firstAttribute="trailing" secondItem="ASk-Mh-gcZ" secondAttribute="trailing" id="gn7-UM-bYT"/>
+                            <constraint firstItem="ASk-Mh-gcZ" firstAttribute="leading" secondItem="opy-FJ-vKn" secondAttribute="leading" id="pyG-aW-7cU"/>
+                            <constraint firstItem="7h4-HH-KLo" firstAttribute="centerX" secondItem="opy-FJ-vKn" secondAttribute="centerX" id="tnz-D2-1vx"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="vq9-RZ-vvM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q3T-is-QMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1852.5" y="137.32394366197184"/>
+            <point key="canvasLocation" x="1652" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
