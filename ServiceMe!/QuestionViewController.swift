@@ -10,9 +10,11 @@ import UIKit
 
 class QuestionViewController: UIViewController {
 
-    @IBOutlet weak var message_label: UITextView!
+    @IBOutlet weak var message_label: UILabel!
     var count: Int = 0
-    var questions: Array = ["elderly","smokers","drinkers","killers","delinquents"]
+    var questions: Array = ["Do you enjoy working with the elderly?","Do you like to work with smokers?","How about drinkers?","What about murderers?","Do you like kids?"]
+    
+    
     @IBAction func startOverButton(_ sender: Any)
     {
         //does the segue from the questionaire to the start page
@@ -20,7 +22,7 @@ class QuestionViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("test")
+        
 
         // Do any additional setup after loading the view.
     }
@@ -29,24 +31,37 @@ class QuestionViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func yes_button(_ sender: Any) {
-        if count > 4 {
+    
+    @IBAction func yes_button(_ sender: UIButton)
+    {
+        print(count)
+        if count > 4
+        {
             self.performSegue(withIdentifier: "table_transition", sender: self)
-        } else {
+        }
+        else
+        {
             self.message_label.text = questions[count]
             self.count  = count + 1
         }
+
     }
-    @IBAction func no_button(_ sender: Any) {
-        if count > 4 {
+    
+    @IBAction func no_button(_ sender: Any)
+    {
+        print(count)
+        if count > 4
+        {
             self.performSegue(withIdentifier: "table_transition", sender: self)
-        } else {
+        }
+        else
+        {
             self.message_label.text = questions[count]
             self.count  = count + 1
         }
+
     }
-   
-   
+
     
 
     
