@@ -42,7 +42,7 @@ class QuestionViewController: UIViewController {
         else
         {
             self.message_label.text = questions[count]
-            self.answers.append(1)
+            //self.answers.append(1)
             return
         }
         
@@ -63,7 +63,7 @@ class QuestionViewController: UIViewController {
         else
         {
             self.message_label.text = questions[count]
-            self.answers.append(0)
+            //self.answers.append(0)
             return
         }
 
