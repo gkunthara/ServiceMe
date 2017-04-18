@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -131,7 +131,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="yes_button:" destination="ngB-Ir-K4W" eventType="touchUpInside" id="YFC-iv-FJy"/>
-                                                    <segue destination="dJ8-aY-uev" kind="show" identifier="table_transition" id="ld0-gu-ODw"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0b-8H-t4C">
@@ -171,6 +170,7 @@
                     <navigationItem key="navigationItem" id="vq9-RZ-vvM"/>
                     <connections>
                         <outlet property="message_label" destination="AUf-Fx-5ac" id="drd-hW-CcG"/>
+                        <segue destination="dJ8-aY-uev" kind="show" identifier="table_transition" id="TbU-L7-Soh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q3T-is-QMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -198,7 +198,7 @@
                                         <rect key="frame" x="0.0" y="28" width="297" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RoW-q1-VjA" id="7ge-Sz-zDa">
-                                            <rect key="frame" x="0.0" y="0.0" width="297" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="297" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

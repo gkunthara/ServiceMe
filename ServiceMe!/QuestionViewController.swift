@@ -13,6 +13,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var message_label: UILabel!
     var count: Int = 0
     var questions: Array = ["Do you enjoy working with the elderly?","Do you like to work with smokers?","How about drinkers?","What about murderers?","Do you like kids?"]
+    var answers: Array<Int> = [];
     
     
     @IBAction func startOverButton(_ sender: Any)
@@ -32,17 +33,14 @@ class QuestionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func yes_button(_ sender: UIButton)
+    @IBAction func yes_button(_ sender: Any)
     {
-        print(count)
-        if count > 4
-        {
-            self.performSegue(withIdentifier: "table_transition", sender: self)
-        }
-        else
-        {
+        
+        self.count  = count + 1
+        
+        guard count > 4  else {
             self.message_label.text = questions[count]
-            //self.answers.append(1)
+            self.answers.append(1)
             return
         }
         
@@ -55,15 +53,17 @@ class QuestionViewController: UIViewController {
     
     @IBAction func no_button(_ sender: Any)
     {
-        print(count)
-        if count > 4
-        {
-            self.performSegue(withIdentifier: "table_transition", sender: self)
-        }
-        else
-        {
+        
+        self.count  = count + 1
+        
+        guard count > 4  else {
             self.message_label.text = questions[count]
-            //self.answers.append(0)
+            self.answers.append(0)
+            return
+        }
+        
+        guard count <= 4 else {
+            self.performSegue(withIdentifier: "table_transition", sender: self)
             return
         }
 
