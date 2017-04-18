@@ -11,7 +11,7 @@ import UIKit
 class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    let list = ["Milk", "Honey", "Bread", "Tacos", "Tomatoes"]
+    let list = ["one","two"]
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {

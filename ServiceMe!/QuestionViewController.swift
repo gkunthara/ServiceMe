@@ -12,7 +12,8 @@ class QuestionViewController: UIViewController {
 
     @IBOutlet weak var message_label: UITextView!
     var count: Int = 0
-    var questions: Array = ["elderly","smokers","drinkers","killers","delinquents"]
+    var questions: Array = ["Do you enjoy working with homeless people?", "Do you enjoy working with elderly people?", "Do you enjoy working with hooker people?", "Do you enjoy working with kids?", "Do you enjoy working with mentally ill people?"]
+    var answers: Array = [0,0,0,0,0];
     @IBAction func startOverButton(_ sender: Any)
     {
         //does the segue from the questionaire to the start page
@@ -20,7 +21,7 @@ class QuestionViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("test")
+        self.message_label.text = questions[count]
 
         // Do any additional setup after loading the view.
     }
@@ -30,22 +31,39 @@ class QuestionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func yes_button(_ sender: Any) {
-        if count > 4 {
-            self.performSegue(withIdentifier: "table_transition", sender: self)
-        } else {
+        self.count  = count + 1
+        
+        guard count > 4  else {
             self.message_label.text = questions[count]
-            self.count  = count + 1
+            self.answers.append(1)
+            return
+        }
+        
+        guard count <= 4 else {
+            self.performSegue(withIdentifier: "table_transition", sender: self)
+            return
         }
     }
     @IBAction func no_button(_ sender: Any) {
-        if count > 4 {
-            self.performSegue(withIdentifier: "table_transition", sender: self)
-        } else {
+        self.count  = count + 1
+        
+        guard count > 4  else {
             self.message_label.text = questions[count]
-            self.count  = count + 1
+            self.answers.append(0)
+            return
         }
+        
+        guard count <= 4 else {
+            self.performSegue(withIdentifier: "table_transition", sender: self)
+            return
+        }
+        
+        
+      
+        
     }
-   
+    
+    
    
     
 
