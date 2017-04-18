@@ -42,7 +42,13 @@ class QuestionViewController: UIViewController {
         else
         {
             self.message_label.text = questions[count]
-            self.count  = count + 1
+            self.answers.append(1)
+            return
+        }
+        
+        guard count <= 4 else {
+            self.performSegue(withIdentifier: "table_transition", sender: self)
+            return
         }
 
     }
@@ -57,7 +63,8 @@ class QuestionViewController: UIViewController {
         else
         {
             self.message_label.text = questions[count]
-            self.count  = count + 1
+            self.answers.append(0)
+            return
         }
 
     }
