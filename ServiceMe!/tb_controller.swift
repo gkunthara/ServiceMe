@@ -26,6 +26,16 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
         return(cell)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
+            navigationController?.pushViewController(vc, animated: true)
+           
+        }
+        
+    }
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

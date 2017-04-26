@@ -16,6 +16,8 @@ class QuestionViewController: UIViewController {
     var answers: Array<Int> = [];
     
     
+    
+    
     @IBAction func startOverButton(_ sender: Any)
     {
         //does the segue from the questionaire to the start page
@@ -23,7 +25,6 @@ class QuestionViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
         // Do any additional setup after loading the view.
     }
@@ -41,6 +42,7 @@ class QuestionViewController: UIViewController {
         guard count > 4  else {
             self.message_label.text = questions[count]
             self.answers.append(1)
+            print(answers)
             return
         }
         
@@ -59,6 +61,7 @@ class QuestionViewController: UIViewController {
         guard count > 4  else {
             self.message_label.text = questions[count]
             self.answers.append(0)
+            print(answers)
             return
         }
         
