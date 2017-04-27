@@ -12,18 +12,13 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     
     var list = ["one","two","three","four","five"]
+    var numbers : String = ""
     
     var recordedAudioURL = Int()
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        let prefs = UserDefaults.standard
-        if let city = prefs.string(forKey: "userCity"){
-           print(city)
-        }else{
-            //Nothing stored in NSUserDefaults yet. Set a value.
-            prefs.setValue("Berlin", forKey: "userCity")
-        }
+       
         return(list.count)
     }
     
@@ -50,12 +45,64 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let prefs = UserDefaults.standard
+        if let city = prefs.string(forKey: "userCity"){
+            numbers = city
+            let arrayofstring = city.characters.map { (Character) -> Character in
+                return Character
+            }
+            let responses = options(values: arrayofstring)
+            
+            
+            list = responses
+            
+
+        }else{
+            //Nothing stored in NSUserDefaults yet. Set a value.
+            prefs.setValue("Berlin", forKey: "userCity")
+        }
         
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func options(values:Array<Character>) -> Array<String> {
+        var numbers: Array <Int> = []
+        var responses: Array<String> = []
+        for i in 0...4 {
+            numbers.append(Int(String(values[i]))!)
+        }
+        
+        if numbers[0] == 1 {
+            responses.append("knights")
+        } else {
+            responses.append("not knights")
+        }
+        if numbers[1] == 1 {
+            responses.append("knights")
+        } else {
+            responses.append("not knights")
+        }
+        if numbers[2] == 1 {
+            responses.append("knights")
+        } else {
+            responses.append("not knights")
+        }
+        if numbers[3] == 1 {
+            responses.append("knights")
+        } else {
+            responses.append("not knights")
+        }
+        if numbers[4] == 1 {
+            responses.append("knights")
+        } else {
+            responses.append("not knights")
+        }
+       
+        return responses
     }
     
     
