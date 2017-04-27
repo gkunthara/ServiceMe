@@ -42,12 +42,14 @@ class QuestionViewController: UIViewController {
         guard count > 4  else {
             self.message_label.text = questions[count]
             self.answers.append(1)
-            print(answers)
+            
             return
         }
         
         guard count <= 4 else {
-            self.performSegue(withIdentifier: "table_transition", sender: self)
+            let prefs = UserDefaults.standard
+            prefs.setValue("tinkertown", forKey: "userCity")
+            self.performSegue(withIdentifier: "table_transition", sender: Int())
             return
         }
 
@@ -61,16 +63,20 @@ class QuestionViewController: UIViewController {
         guard count > 4  else {
             self.message_label.text = questions[count]
             self.answers.append(0)
-            print(answers)
+            
             return
         }
         
         guard count <= 4 else {
-            self.performSegue(withIdentifier: "table_transition", sender: self)
+            let prefs = UserDefaults.standard
+            prefs.setValue("tinkertown", forKey: "userCity")
+            self.performSegue(withIdentifier: "table_transition", sender: Int())
             return
         }
 
     }
+    
+    
 
     
 

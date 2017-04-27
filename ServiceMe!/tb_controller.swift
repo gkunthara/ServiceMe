@@ -11,10 +11,19 @@ import UIKit
 class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    let list = ["one","two"]
+    var list = ["one","two","three","four","five"]
+    
+    var recordedAudioURL = Int()
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        let prefs = UserDefaults.standard
+        if let city = prefs.string(forKey: "userCity"){
+           print(city)
+        }else{
+            //Nothing stored in NSUserDefaults yet. Set a value.
+            prefs.setValue("Berlin", forKey: "userCity")
+        }
         return(list.count)
     }
     
@@ -29,6 +38,7 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
+            
             navigationController?.pushViewController(vc, animated: true)
            
         }
@@ -40,6 +50,7 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     override func didReceiveMemoryWarning() {
