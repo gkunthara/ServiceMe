@@ -18,7 +18,7 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-       
+       print(1)
         return(list.count)
     }
     
@@ -26,17 +26,20 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
     {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
         cell.textLabel?.text = list[indexPath.row]
-        
+        print(2)
         return(cell)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
-            
+            let prefs = UserDefaults.standard
+            let value = "hello its me"
+            prefs.setValue(value, forKey: "this_dick")
             navigationController?.pushViewController(vc, animated: true)
-           
+            
         }
+      
+
         
     }
 

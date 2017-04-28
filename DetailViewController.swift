@@ -12,6 +12,13 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let prefs = UserDefaults.standard
+        if let city = prefs.string(forKey: "this_dick"){
+            print(city)
+        }else{
+            //Nothing stored in NSUserDefaults yet. Set a value.
+            prefs.setValue("Berlin", forKey: "this_dick")
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -22,14 +29,6 @@ class DetailViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
