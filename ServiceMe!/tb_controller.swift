@@ -9,8 +9,8 @@
 import UIKit
 
 class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    enum serviceType {
+    // types of question
+    enum ServiceType {
         case FamilyTrue
         case FamilyFalse
         case KidsTrue
@@ -22,11 +22,8 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
         case RelaxingTrue
         case RelaxingFalse
     }
-    struct service {
-        let question: String
-        var val: Bool
-    }
-    var list = ["one","two","three","four","five"]
+    
+    var list = ["one","two","three","four","five"] // intitalize 
     
     
     
@@ -87,13 +84,13 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func options(values:Array<Character>) -> Array<String> {
-        var numbers: Array <serviceType> = []
+        var numbers: Array <ServiceType> = []
         var responses: Array<String> = []
-        let serviceTypeOptions = [serviceType.FamilyTrue,serviceType.FamilyFalse,serviceType.KidsTrue,serviceType.KidsFalse,serviceType.ThrillTrue,serviceType.ThrillFalse,serviceType.ScaryTrue,serviceType.ScaryFalse,serviceType.RelaxingTrue,serviceType.RelaxingFalse]
+        let serviceTypeOptions = [ServiceType.FamilyTrue,ServiceType.FamilyFalse,ServiceType.KidsTrue,ServiceType.KidsFalse,ServiceType.ThrillTrue,ServiceType.ThrillFalse,ServiceType.ScaryTrue,ServiceType.ScaryFalse,ServiceType.RelaxingTrue,ServiceType.RelaxingFalse]
         for i in 0...4 {
             var x = serviceTypeOptions[(i*2)]
             if (Int(String(values[i]))!) == 1 {
-                x = serviceTypeOptions[i]
+                x = serviceTypeOptions[(i*2)]
             }
             else {
                 x = serviceTypeOptions[(i*2)+1]
@@ -126,35 +123,7 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
             }
         }
-        /*
-        if numbers[0] == 1 {
-            responses.append("knights")
-        } else {
-            responses.append("not knights")
-        }
-        
-        if numbers[1] == 1 {
-            responses.append("knights")
-        } else {
-            responses.append("not knights")
-        }
-        if numbers[2] == 1 {
-            responses.append("knights")
-        } else {
-            responses.append("not knights")
-        }
-        if numbers[3] == 1 {
-            responses.append("knights")
-        } else {
-            responses.append("not knights")
-        }
-        if numbers[4] == 1 {
-            responses.append("knights")
-        } else {
-            responses.append("not knights")
-        }
-       */
-        return responses
+                return responses
     }
     
     
