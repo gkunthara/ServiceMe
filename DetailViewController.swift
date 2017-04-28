@@ -10,14 +10,16 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    
+    @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         let prefs = UserDefaults.standard
-        if let city = prefs.string(forKey: "this_dick"){
-            print(city)
+        if let city = prefs.string(forKey: "detail"){
+            label.text = city
         }else{
             //Nothing stored in NSUserDefaults yet. Set a value.
-            prefs.setValue("Berlin", forKey: "this_dick")
+            prefs.setValue("Berlin", forKey: "detail")
         }
 
         // Do any additional setup after loading the view.

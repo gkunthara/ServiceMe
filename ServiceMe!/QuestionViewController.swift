@@ -48,7 +48,7 @@ class QuestionViewController: UIViewController {
         guard count <= 4 else {
             let prefs = UserDefaults.standard
             let value = answers[0] + answers[1] + answers[2] + answers[3] + answers[4]
-            prefs.setValue(value, forKey: "userCity")
+            prefs.setValue(value, forKey: "q_tb")
             self.performSegue(withIdentifier: "table_transition", sender: Int())
             return
         }
@@ -69,7 +69,7 @@ class QuestionViewController: UIViewController {
         guard count <= 4 else {
             let prefs = UserDefaults.standard
             let value = answers[0] + answers[1] + answers[2] + answers[3] + answers[4]
-            prefs.setValue(value, forKey: "userCity")
+            prefs.setValue(value, forKey: "q_tb")
             self.performSegue(withIdentifier: "table_transition", sender: Int())
             return
         }

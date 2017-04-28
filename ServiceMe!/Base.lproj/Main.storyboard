@@ -264,7 +264,7 @@
                                         <rect key="frame" x="0.0" y="28" width="297" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RoW-q1-VjA" id="7ge-Sz-zDa">
-                                            <rect key="frame" x="0.0" y="0.0" width="264" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="264" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -312,7 +312,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Description of this Bitch" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKY-i4-x75">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description of this " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKY-i4-x75">
                                 <rect key="frame" x="50" y="54" width="293" height="82"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="82" id="CKG-zu-otU"/>
@@ -323,7 +323,16 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.23577463630000001" green="0.57108193640000005" blue="0.4732326865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hKY-i4-x75" firstAttribute="leading" secondItem="rMP-NG-hVB" secondAttribute="leadingMargin" constant="34" id="4TA-4l-UXh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hKY-i4-x75" secondAttribute="trailing" constant="16" id="HHL-ci-3cM"/>
+                            <constraint firstItem="hKY-i4-x75" firstAttribute="top" secondItem="4WD-9d-17W" secondAttribute="bottom" constant="34" id="n5H-ak-8QY"/>
+                            <constraint firstItem="glW-dU-gsv" firstAttribute="top" secondItem="hKY-i4-x75" secondAttribute="bottom" constant="531" id="pFw-dF-a6r"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="hKY-i4-x75" id="PVw-rr-hSJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggn-Sb-vfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

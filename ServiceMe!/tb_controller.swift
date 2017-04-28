@@ -10,7 +10,17 @@ import UIKit
 
 class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
+    enum serviceType {
+        case Family
+        case Kids
+        case Thrill
+        case Scary
+        case Relaxing
+    }
+    struct service {
+        let question: String
+        var val: Bool
+    }
     var list = ["one","two","three","four","five"]
     var numbers : String = ""
     
@@ -34,7 +44,7 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
             let prefs = UserDefaults.standard
             let value = "hello its me"
-            prefs.setValue(value, forKey: "this_dick")
+            prefs.setValue(value, forKey: "detail")
             navigationController?.pushViewController(vc, animated: true)
             
         }
@@ -49,7 +59,7 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let prefs = UserDefaults.standard
-        if let city = prefs.string(forKey: "userCity"){
+        if let city = prefs.string(forKey: "q_tb"){
             numbers = city
             let arrayofstring = city.characters.map { (Character) -> Character in
                 return Character
@@ -62,7 +72,7 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
         }else{
             //Nothing stored in NSUserDefaults yet. Set a value.
-            prefs.setValue("Berlin", forKey: "userCity")
+            prefs.setValue("Berlin", forKey: "q_tb")
         }
         
     }
@@ -76,7 +86,13 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
         var numbers: Array <Int> = []
         var responses: Array<String> = []
         for i in 0...4 {
+            var x = service(question: "",val: true)
+            guard (Int(String(values[i]))!) == 1 else {
+                x.val = false
+                break
+            }
             numbers.append(Int(String(values[i]))!)
+            
         }
         
         if numbers[0] == 1 {
@@ -84,6 +100,7 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
         } else {
             responses.append("not knights")
         }
+        
         if numbers[1] == 1 {
             responses.append("knights")
         } else {
