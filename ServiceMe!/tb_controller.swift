@@ -11,20 +11,24 @@ import UIKit
 class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     enum serviceType {
-        case Family
-        case Kids
-        case Thrill
-        case Scary
-        case Relaxing
+        case FamilyTrue
+        case FamilyFalse
+        case KidsTrue
+        case KidsFalse
+        case ThrillTrue
+        case ThrillFalse
+        case ScaryTrue
+        case ScaryFalse
+        case RelaxingTrue
+        case RelaxingFalse
     }
     struct service {
         let question: String
         var val: Bool
     }
     var list = ["one","two","three","four","five"]
-    var numbers : String = ""
     
-    var recordedAudioURL = Int()
+    
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -60,7 +64,7 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
         // Do any additional setup after loading the view, typically from a nib.
         let prefs = UserDefaults.standard
         if let city = prefs.string(forKey: "q_tb"){
-            numbers = city
+            
             let arrayofstring = city.characters.map { (Character) -> Character in
                 return Character
             }
@@ -83,18 +87,46 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func options(values:Array<Character>) -> Array<String> {
-        var numbers: Array <Int> = []
+        var numbers: Array <serviceType> = []
         var responses: Array<String> = []
+        let serviceTypeOptions = [serviceType.FamilyTrue,serviceType.FamilyFalse,serviceType.KidsTrue,serviceType.KidsFalse,serviceType.ThrillTrue,serviceType.ThrillFalse,serviceType.ScaryTrue,serviceType.ScaryFalse,serviceType.RelaxingTrue,serviceType.RelaxingFalse]
         for i in 0...4 {
-            var x = service(question: "",val: true)
-            guard (Int(String(values[i]))!) == 1 else {
-                x.val = false
-                break
+            var x = serviceTypeOptions[(i*2)]
+            if (Int(String(values[i]))!) == 1 {
+                x = serviceTypeOptions[i]
             }
-            numbers.append(Int(String(values[i]))!)
-            
+            else {
+                x = serviceTypeOptions[(i*2)+1]
+            }
+            numbers.append(x)
         }
         
+        for i in 0...4 {
+            switch numbers[i] {
+            case .FamilyTrue:
+                responses.append("Familys")
+            case .FamilyFalse:
+                responses.append("not Familys")
+            case .KidsTrue:
+                responses.append("Kids")
+            case .KidsFalse:
+                responses.append("not Kids")
+            case .ThrillTrue:
+                responses.append("Thrills")
+            case .ThrillFalse:
+                responses.append("not Thrills")
+            case .ScaryTrue:
+                responses.append("Scary")
+            case .ScaryFalse:
+                responses.append("not scary")
+            case .RelaxingTrue:
+                responses.append("relaxing")
+            case .RelaxingFalse:
+                responses.append("not relaxing")
+
+            }
+        }
+        /*
         if numbers[0] == 1 {
             responses.append("knights")
         } else {
@@ -121,7 +153,7 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
         } else {
             responses.append("not knights")
         }
-       
+       */
         return responses
     }
     
