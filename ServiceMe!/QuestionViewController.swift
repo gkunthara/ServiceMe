@@ -11,7 +11,7 @@ class QuestionViewController: UIViewController {
 
     @IBOutlet weak var message_label: UILabel!
     var count: Int = 0
-    var questions: Array = ["Do you enjoy working with the elderly?","Do you like to work with smokers?","How about drinkers?","What about murderers?","Do you like kids?"]
+    var questions: Array = ["Do you enjoy working with homeless people?","Do you enjoy working with the elderly?","How about working for Catholic Charities?","How about working with kids?","Would you like to work with the sick?", "What about working for the underprivileged?"]
     var answers: Array <String> = [];
     
     
@@ -23,7 +23,9 @@ class QuestionViewController: UIViewController {
         performSegue(withIdentifier: "startOverSegue", sender: nil)
     }
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        message_label.text = questions[0]
 
         // Do any additional setup after loading the view.
     }
@@ -39,15 +41,16 @@ class QuestionViewController: UIViewController {
         
         
         guard count > 4  else {
+            self.count  = count + 1
             self.message_label.text = questions[count]
             self.answers.append("1")
-            self.count  = count + 1
             return
         }
         
         guard count <= 4 else {
             let prefs = UserDefaults.standard
-            let value = answers[0] + answers[1] + answers[2] + answers[3] + answers[4]
+            self.answers.append("1")
+            let value = answers[0] + answers[1] + answers[2] + answers[3] + answers[4] + answers[5]
             prefs.setValue(value, forKey: "q_tb")
             self.performSegue(withIdentifier: "table_transition", sender: Int())
             return
@@ -59,16 +62,17 @@ class QuestionViewController: UIViewController {
     {
         
         
-        guard count > 4  else {
+        guard count > 4 else {
+            self.count  = count + 1
             self.message_label.text = questions[count]
             self.answers.append("0")
-            self.count  = count + 1
             return
         }
         
         guard count <= 4 else {
             let prefs = UserDefaults.standard
-            let value = answers[0] + answers[1] + answers[2] + answers[3] + answers[4]
+            self.answers.append("0")
+            let value = answers[0] + answers[1] + answers[2] + answers[3] + answers[4] + answers[5]
             prefs.setValue(value, forKey: "q_tb")
             self.performSegue(withIdentifier: "table_transition", sender: Int())
             return

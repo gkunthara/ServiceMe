@@ -10,21 +10,20 @@ import UIKit
 
 class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    enum serviceType {
-        case FamilyTrue
-        case FamilyFalse
+    enum serviceType
+    {
+        case HomelessTrue
+        case HomelessFalse
+        case ElderlyTrue
+        case ElderlyFalse
+        case CharityTrue
+        case CharityFalse
         case KidsTrue
         case KidsFalse
-        case ThrillTrue
-        case ThrillFalse
-        case ScaryTrue
-        case ScaryFalse
-        case RelaxingTrue
-        case RelaxingFalse
-    }
-    struct service {
-        let question: String
-        var val: Bool
+        case SickTrue
+        case SickFalse
+        case PrivilegeTrue
+        case PrivilegeFalse
     }
     var list = ["one","two","three","four","five"]
     
@@ -32,7 +31,7 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-       print(1)
+        
         return(list.count)
     }
     
@@ -40,7 +39,6 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
     {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
         cell.textLabel?.text = list[indexPath.row]
-        print(2)
         return(cell)
     }
     
@@ -63,20 +61,21 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let prefs = UserDefaults.standard
-        if let city = prefs.string(forKey: "q_tb"){
+        if let answers = prefs.string(forKey: "q_tb")
+        {
             
-            let arrayofstring = city.characters.map { (Character) -> Character in
-                return Character
-            }
-            let responses = options(values: arrayofstring)
+            let charArr = Array(answers.characters)
+            let responses = options(values: charArr)
             
-            
+
             list = responses
             
 
-        }else{
+        }
+        else
+        {
             //Nothing stored in NSUserDefaults yet. Set a value.
-            prefs.setValue("Berlin", forKey: "q_tb")
+            prefs.setValue("", forKey: "q_tb")
         }
         
     }
@@ -86,75 +85,49 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
         // Dispose of any resources that can be recreated.
     }
     
-    func options(values:Array<Character>) -> Array<String> {
+    func options(values:Array<Character>) -> Array<String>
+    {
         var numbers: Array <serviceType> = []
         var responses: Array<String> = []
-        let serviceTypeOptions = [serviceType.FamilyTrue,serviceType.FamilyFalse,serviceType.KidsTrue,serviceType.KidsFalse,serviceType.ThrillTrue,serviceType.ThrillFalse,serviceType.ScaryTrue,serviceType.ScaryFalse,serviceType.RelaxingTrue,serviceType.RelaxingFalse]
-        for i in 0...4 {
+        let serviceTypeOptions = [serviceType.HomelessTrue,.HomelessFalse,.ElderlyTrue,.ElderlyFalse,.CharityTrue,.CharityFalse,.KidsTrue,.KidsFalse,.SickTrue,.SickFalse, .PrivilegeTrue, .PrivilegeFalse]
+        
+        for i in 0...5
+        {
             var x = serviceTypeOptions[(i*2)]
-            if (Int(String(values[i]))!) == 1 {
-                x = serviceTypeOptions[i]
+            if (Int(String(values[i]))!) == 1
+            {
+                x = serviceTypeOptions[i*2]
             }
-            else {
+            else
+            {
                 x = serviceTypeOptions[(i*2)+1]
             }
             numbers.append(x)
+            
         }
         
-        for i in 0...4 {
-            switch numbers[i] {
-            case .FamilyTrue:
-                responses.append("Familys")
-            case .FamilyFalse:
-                responses.append("not Familys")
+        for i in 0...5
+        {
+            switch numbers[i]
+            {
+            case .HomelessTrue:
+                responses.append("Homeless")
+            case .ElderlyTrue:
+                responses.append("Elderly")
+            case .CharityTrue:
+                responses.append("Charity")
             case .KidsTrue:
                 responses.append("Kids")
-            case .KidsFalse:
-                responses.append("not Kids")
-            case .ThrillTrue:
-                responses.append("Thrills")
-            case .ThrillFalse:
-                responses.append("not Thrills")
-            case .ScaryTrue:
-                responses.append("Scary")
-            case .ScaryFalse:
-                responses.append("not scary")
-            case .RelaxingTrue:
-                responses.append("relaxing")
-            case .RelaxingFalse:
-                responses.append("not relaxing")
+            case .SickTrue:
+                responses.append("Sick")
+            case .PrivilegeTrue:
+                responses.append("Underprivileged")
+            default:
+                print("nope")
 
             }
         }
-        /*
-        if numbers[0] == 1 {
-            responses.append("knights")
-        } else {
-            responses.append("not knights")
-        }
-        
-        if numbers[1] == 1 {
-            responses.append("knights")
-        } else {
-            responses.append("not knights")
-        }
-        if numbers[2] == 1 {
-            responses.append("knights")
-        } else {
-            responses.append("not knights")
-        }
-        if numbers[3] == 1 {
-            responses.append("knights")
-        } else {
-            responses.append("not knights")
-        }
-        if numbers[4] == 1 {
-            responses.append("knights")
-        } else {
-            responses.append("not knights")
-        }
-       */
-        return responses
+            return responses
     }
     
     
