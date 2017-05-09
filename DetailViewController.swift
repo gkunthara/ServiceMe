@@ -9,20 +9,29 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
     
-    @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var nameOfPlace: UILabel!
+    @IBOutlet weak var phoneNumber: UILabel!
+    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var placeDescription: UILabel!
+    
+    
+    var selectedTitle: String?
+    var selectedNumber: String?
+    var selectedAddress: String?
+    var selectedDescription: String?
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let prefs = UserDefaults.standard
-        if let city = prefs.string(forKey: "detail"){
-            label.text = city
-        }else{
-            //Nothing stored in NSUserDefaults yet. Set a value.
-            prefs.setValue("Berlin", forKey: "detail")
-        }
-
         // Do any additional setup after loading the view.
+        nameOfPlace.text = selectedTitle
+        phoneNumber.text = selectedNumber
+        address.text = selectedAddress
+        placeDescription.text = selectedDescription
+        
     }
 
     override func didReceiveMemoryWarning() {
