@@ -31,16 +31,14 @@ class QuestionViewController: UIViewController {
     
     @IBAction func yes_button(_ sender: Any)
     {
-        
-        
-        
+        // if you have more questions to ask the user
         guard count > 4  else {
             self.count  = count + 1
             self.message_label.text = questions[count]
             self.answers.append("1")
             return
         }
-        
+        // if you have no more questions to ask the user send responses to tb_controller
         guard count <= 4 else {
             let prefs = UserDefaults.standard
             self.answers.append("1")
@@ -62,7 +60,7 @@ class QuestionViewController: UIViewController {
             self.answers.append("0")
             return
         }
-        
+        //same as above for yes button
         guard count <= 4 else {
             let prefs = UserDefaults.standard
             self.answers.append("0")
