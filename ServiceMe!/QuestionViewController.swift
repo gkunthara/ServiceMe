@@ -16,12 +16,6 @@ class QuestionViewController: UIViewController {
     
     
     
-    
-    @IBAction func startOverButton(_ sender: Any)
-    {
-        //does the segue from the questionaire to the start page
-        performSegue(withIdentifier: "startOverSegue", sender: nil)
-    }
     override func viewDidLoad() {
         
         super.viewDidLoad()
