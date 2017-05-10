@@ -97,16 +97,19 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 
             }
 
-
-
-
             
             navigationController?.pushViewController(vc, animated: true)
+            //performSegue(withIdentifier: "toDetail", sender: nil)
             
         }
       
 
         
+    }
+    
+    func alphabetically(s1: String, s2: String) -> Bool
+    {
+        return s1 < s2
     }
 
     
@@ -123,6 +126,9 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
 
             list = responses
+            //list.sort{$0 < $1} //closure which sorts list alphabetically
+            //list.sort(by: alphabetically(s1:s2:))
+            list = list.sorted(by: { (s1: String, s2: String) -> Bool in return s1 < s2 } )
             
 
         }
