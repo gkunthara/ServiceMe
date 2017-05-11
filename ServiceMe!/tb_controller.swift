@@ -117,6 +117,7 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.navigationController?.isNavigationBarHidden = true //hide nav bar when loading view controller
         let prefs = UserDefaults.standard
         if let answers = prefs.string(forKey: "q_tb")
         {
@@ -138,6 +139,11 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
             prefs.setValue("", forKey: "q_tb")
         }
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: animated) //show nav bar again navigating to next view controller
     }
     
     override func didReceiveMemoryWarning() {

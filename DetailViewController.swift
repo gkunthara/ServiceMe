@@ -27,11 +27,16 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.topItem?.title = "ServiceMe!" //set title again
         nameOfPlace.text = selectedTitle
         phoneNumber.text = selectedNumber
         address.text = selectedAddress
         placeDescription.text = selectedDescription
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true //remove navbar once going back to table view controller
     }
 
     override func didReceiveMemoryWarning() {
