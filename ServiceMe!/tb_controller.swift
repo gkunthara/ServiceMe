@@ -99,7 +99,7 @@ class tb_controller: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
             
             navigationController?.pushViewController(vc, animated: true)
-            //performSegue(withIdentifier: "toDetail", sender: nil)
+            
             
         }
       
