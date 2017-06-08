@@ -12,7 +12,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var message_label: UILabel!
     var count: Int = 0
     var questions: Array = ["Do you enjoy working with homeless people?","Do you enjoy working with the elderly?","How about working for Catholic Charities?","How about working with kids?","Would you like to work with the sick?", "What about working for the underprivileged?"]
-    var answers: Array <String> = [];
+    var answers: Array <String> = []
     
     
     
