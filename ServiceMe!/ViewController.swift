@@ -7,18 +7,41 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class ViewController: UIViewController {
     
-    @IBAction func volunteerButton(_ sender: Any) {
-        
-        //does the segue from the homepage to the start of the Questionaire
-        performSegue(withIdentifier: "homeToQuestionSegue", sender: nil)
- 
+    
+    
+    
+    @IBOutlet weak var error_label: UILabel!
+    @IBOutlet weak var pass_field: UITextField!
+    @IBOutlet weak var pass_label: UILabel!
+    @IBOutlet weak var email_field: UITextField!
+    @IBOutlet weak var email_label: UILabel!
+    
+    @IBAction func signup_click(_ sender: Any) {
     }
+    
+    
+    @IBAction func login_click(_ sender: Any) {
+        Auth.auth().signIn(withEmail: email_field.text!, password: pass_field.text!) { (user, error) in
+            if user != nil {
+                self.performSegue(withIdentifier: "homeToQuestionSegue", sender: nil)
+            } else {
+                self.error_label.isHidden = false
+            }
+        }
+        
+        
+    }
+    
+        
+ 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        error_label.isHidden = true
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -26,6 +49,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
 
 }
