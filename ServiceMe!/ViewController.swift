@@ -75,25 +75,6 @@ extension UITextField {
     }
 }
 
-/*public protocol BannerColorsProtocol {
-    func color(for style: BannerStyle) -> UIColor
-}
-
-class CustomBannerColors: BannerColorsProtocol {
-    
-    func color(for style: BannerStyle) -> UIColor {
-        switch style {
-        case .danger: return UIColor.red// Your custom .danger color
-        case .info: break     // Your custom .info color
-        case .none: break     // Your custom .none color
-        case .success: break  // Your custom .success color
-        case .warning: break  // Your custom .warning color
-        }
-        return UIColor.black
-    
-}
-}*/
-
 
 
 
