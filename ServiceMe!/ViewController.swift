@@ -8,12 +8,13 @@
 
 import UIKit
 import FirebaseAuth
+import NotificationBannerSwift
+
 class ViewController: UIViewController {
     
     
     
     
-    @IBOutlet weak var error_label: UILabel!
     @IBOutlet weak var pass_field: UITextField!
     @IBOutlet weak var pass_label: UILabel!
     @IBOutlet weak var email_field: UITextField!
@@ -28,7 +29,8 @@ class ViewController: UIViewController {
             if user != nil {
                 self.performSegue(withIdentifier: "homeToQuestionSegue", sender: nil)
             } else {
-                self.error_label.isHidden = false
+                let banner = NotificationBanner(title: "Incorrect Username or Password!", subtitle: "Please Try Again", style: .danger)
+                banner.show()
             }
         }
         
@@ -41,8 +43,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        error_label.isHidden = true
         // Do any additional setup after loading the view, typically from a nib.
+        self.email_field.setBottomLine(borderColor: UIColor.white)
+        self.pass_field.setBottomLine(borderColor: UIColor.white)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,8 +73,27 @@ extension UITextField {
         borderLine.backgroundColor = borderColor
         self.addSubview(borderLine)
     }
+}
+
+/*public protocol BannerColorsProtocol {
+    func color(for style: BannerStyle) -> UIColor
+}
+
+class CustomBannerColors: BannerColorsProtocol {
+    
+    func color(for style: BannerStyle) -> UIColor {
+        switch style {
+        case .danger: return UIColor.red// Your custom .danger color
+        case .info: break     // Your custom .info color
+        case .none: break     // Your custom .none color
+        case .success: break  // Your custom .success color
+        case .warning: break  // Your custom .warning color
+        }
+        return UIColor.black
     
 }
+}*/
+
 
 
 
