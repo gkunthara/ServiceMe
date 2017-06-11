@@ -10,9 +10,7 @@ import UIKit
 import FirebaseAuth
 import NotificationBannerSwift
 
-class ViewController: UIViewController {
-    
-    
+class ViewController: UIViewController,UITextFieldDelegate {
     
     
     @IBOutlet weak var pass_field: UITextField!
@@ -21,6 +19,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var email_label: UILabel!
     
     @IBAction func signup_click(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "sign_to_login", sender: nil)
+        
     }
     
     
@@ -36,6 +37,12 @@ class ViewController: UIViewController {
         
         
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        
+        pass_field.resignFirstResponder()
+        return true;
+    }
     
         
  
@@ -46,6 +53,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.email_field.setBottomLine(borderColor: UIColor.white)
         self.pass_field.setBottomLine(borderColor: UIColor.white)
+        
+        pass_field.delegate = self
 
     }
 

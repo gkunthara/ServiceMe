@@ -11,14 +11,13 @@ import FirebaseAuth
 import Firebase
 import FirebaseStorage
 import FirebaseDatabase
+import NotificationBannerSwift
 
 
 class signUpController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var fileP: String?
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var error_label: UILabel!
-    @IBOutlet weak var age_field: UITextField!
     @IBOutlet weak var c_pass_field: UITextField!
     @IBOutlet weak var pass_field: UITextField!
     @IBOutlet weak var email_field: UITextField!
@@ -35,9 +34,14 @@ class signUpController: UIViewController, UIImagePickerControllerDelegate, UINav
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.email_field.setBottomLine(borderColor: UIColor.white)
+        self.pass_field.setBottomLine(borderColor: UIColor.white)
+        self.c_pass_field.setBottomLine(borderColor: UIColor.white)
+        self.name_field.setBottomLine(borderColor: UIColor.white)
+
+
         
         
-        error_label.isHidden = true
         picker.delegate = self
         
         
@@ -84,7 +88,8 @@ class signUpController: UIViewController, UIImagePickerControllerDelegate, UINav
                 
                 self.performSegue(withIdentifier: "sign_to_login", sender: nil)
             } else {
-                self.error_label.isHidden = false
+                let banner = NotificationBanner(title: "Email is already in use!", subtitle: "Please Try Again", style: .danger)
+                banner.show()
             }
         }
 
@@ -103,3 +108,5 @@ class signUpController: UIViewController, UIImagePickerControllerDelegate, UINav
    
 
 }
+
+
